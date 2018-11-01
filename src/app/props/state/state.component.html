@@ -1,0 +1,27 @@
+<div>
+  <h2> Im the PARENT component</h2>
+
+  
+  <div>
+    <p>
+      <span><h4>2 way data binding simple example</h4></span>
+      Field Name with ngModel: <input [(ngModel)]="twoWayText"> <br/>
+      VALUE:  {{twoWayText}}</p>
+      <hr/>
+  </div>
+  <div>
+      <p>
+        <span><h4>Events from child will show here</h4></span>
+        Latest Event ID: {{eventIdFromChild}}</p>
+        <hr/>
+    </div>
+
+</div>
+<p></p>
+
+<section>
+  <app-state-child
+    [inProperty]="'foo'"
+    (updateEvent)="getUpdateFromChild($event)"
+  ></app-state-child>
+<section>

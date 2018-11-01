@@ -1,0 +1,18 @@
+<h2>PEER SERVICES - NOT PARENT CHILD</h2>
+<app-driver></app-driver>
+
+<app-car></app-car>
+
+
+<div>
+    <h2> Im the GARAGE Component</h2>
+    
+    <div>
+      <p>
+        <span><h4>Set Driver Name</h4></span>
+        Driver Name: <input [(ngModel)]="driver">
+        <button (click)="setDriverName()" >PUBLISH VIA EVENT</button>  <br/>
+        VALUE:  {{driver}}</p>
+        <hr/>
+    </div>
+    
