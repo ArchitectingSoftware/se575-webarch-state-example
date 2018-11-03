@@ -17,10 +17,13 @@ import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { postReducer } from './reducers/post.reducer';
 import { HttpComponent } from './observables/http/http.component';
+import { StateUglyComponent } from './props/ugly/state-ugly/state-ugly.component';
+import { StateChildUglyComponent } from './props/ugly/state-child-ugly/state-child-ugly.component';
 
 const appRoutes: Routes = [
   {path: '', component:  MenuComponent},
   {path: 'redux', component: PostListComponent},
+  {path: 'properties/ugly', component: StateUglyComponent},
   {path: 'properties', component: StateComponent},
   {path: 'services', component: GarageComponent},
   {path: 'obs/http', component: HttpComponent},
@@ -37,7 +40,9 @@ const appRoutes: Routes = [
     CarComponent,
     DriverComponent,
     GarageComponent,
-    HttpComponent
+    HttpComponent,
+    StateUglyComponent,
+    StateChildUglyComponent
   ],
   imports: [
     BrowserModule,

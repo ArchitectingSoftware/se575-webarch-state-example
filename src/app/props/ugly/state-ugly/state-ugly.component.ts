@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-state',
-  templateUrl: './state.component.html',
-  styleUrls: ['./state.component.css']
+  selector: 'app-state-ugly',
+  templateUrl: './state-ugly.component.html',
+  styleUrls: ['./state-ugly.component.css']
 })
-export class StateComponent implements OnInit {
+export class StateUglyComponent implements OnInit {
 
   twoWayText: string = "";
   propertyToChild: string = "foo-bar";
   eventIdFromChild: number;
-  public viewFormatted:boolean = true;
 
   constructor() { }
 
@@ -25,9 +24,4 @@ export class StateComponent implements OnInit {
     console.log('GOT EVENT', eventId)
     this.eventIdFromChild = eventId;
   }
-
-  selectViewType(prop: boolean){
-    this.viewFormatted = prop
-  }
-
 }

@@ -1,0 +1,16 @@
+<div>
+  <div>
+      <h2 style="color:blue;"> I'm the CHILD component</h2>
+    <p>passed property: 
+      <span style="color:green">{{inProperty}}</span>
+    </p>
+    <hr />
+  </div>
+  <div>
+    <h5>Send Event</h5>
+    <p>Send update event to subscribed parent:
+      <button (click)="sendEvent()">Send Update Event -> {{stateFullCounter}}</button>
+    </p>
+    <hr />
+  </div>
+</div>

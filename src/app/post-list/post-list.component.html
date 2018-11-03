@@ -15,4 +15,33 @@
 <div>
   <h4>HISTORY FROM PROPERTY</h4>
   <p>{{postHistoryProperty}}</p>
+
+  <div *ngIf="post | async as p">
+  <h4 class="text-primary">Demonstration of Redux State Management</h4>
+  <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group mr-2" role="group" aria-label="First group">
+        <button (click)="upvote()" type="button" class="btn btn-primary">Upvote</button>
+        <button (click)="downvote()" type="button" class="btn btn-danger">DownVote</button>
+        <button (click)="resetPost()" type="button" class="btn btn-warning">Reset</button>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text" id="btnGroupAddon">New Title</div>
+        </div>
+        <input [(ngModel)]="text" type="text" class="form-control" placeholder="title..." aria-label="Input group example" aria-describedby="btnGroupAddon">
+        <button (click)="editText()" type="button" class="btn btn-secondary">Change</button>
+      </div>
+  </div>
+
+  <dl class="row">
+    <dt class="col-sm-4">Title</dt>
+    <dd class="col-sm-8">{{ p.text }}</dd>
+    <dt class="col-sm-4">Votes</dt>
+    <dd class="col-sm-8">{{p.likes}}</dd>
+  </dl>
+  </div>
+
+
+
+
 </div>
