@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StateComponent implements OnInit {
 
-  twoWayText: string;
+  twoWayText: string = "";
+  propertyToChild: string = "foo-bar";
   eventIdFromChild: number;
 
   constructor() { }

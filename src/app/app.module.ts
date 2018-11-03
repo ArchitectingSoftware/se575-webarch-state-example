@@ -16,12 +16,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { postReducer } from './reducers/post.reducer';
+import { HttpComponent } from './observables/http/http.component';
 
 const appRoutes: Routes = [
   {path: '', component:  MenuComponent},
   {path: 'redux', component: PostListComponent},
   {path: 'properties', component: StateComponent},
   {path: 'services', component: GarageComponent},
+  {path: 'obs/http', component: HttpComponent},
   { path: '**', redirectTo: '/' }
 ];
 
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     StateChildComponent,
     CarComponent,
     DriverComponent,
-    GarageComponent
+    GarageComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,

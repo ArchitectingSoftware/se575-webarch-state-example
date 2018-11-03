@@ -1,4 +1,67 @@
 <div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-header"><h3>Parent Component &lt;app-state&gt;</h3></div>
+        <div class="card-body">
+          <!-- TWO WAY DATA BINDING EXAMPLE -->
+          <h4 class="text-primary">Two Way Data Binding Example</h4>
+          <div class="form-group row">
+            <label for="db" class="col-5" col-form-label>Bound Text / [(ngModel)]:</label>
+            <div class="col-7">
+              <input class="form-control form-control-sm" id="db" name="first"
+                [(ngModel)]="twoWayText">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="dbs" class="col-5" col-form-label>Component Value:</label>
+            <div class="col-7">
+                <label *ngIf="twoWayText.length > 0; else elsebinding" class="text-success">
+                  {{twoWayText}}
+                </label>
+                <ng-template #elsebinding><label class="text-danger">NONE</label></ng-template>
+            </div>
+          </div>
+          <hr/>
+          <!-- SENDING PROPERTY TO CHILD -->
+          <h4 class="text-primary">Sending Property To Child</h4>
+          <div class="form-group row">
+            <label for="dbc" class="col-5" col-form-label>Property as Attribute:</label>
+            <div class="col-7">
+              <input class="form-control form-control-sm" id="dbc" name="first"
+              [(ngModel)]="propertyToChild">
+            </div>
+          </div>
+          <hr/>
+          <!-- RECEIVING EVENTS FROM A CHILD COMPONENT -->
+          <h4 class="text-primary">Listening for Events from Child Component</h4>
+          <div class="form-group row">
+            <label for="dbs" class="col-5" col-form-label>Last Event from Child:</label>
+            <div class="col-7">
+                <label *ngIf="eventIdFromChild === undefined; else elseevent" class="text-danger">
+                  NO EVENTS YET
+                </label>
+                <ng-template #elseevent><label class="text-success">
+                  {{eventIdFromChild}}
+                </label></ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+
+
+  <app-state-child
+  [inProperty]="propertyToChild"
+  (updateEvent)="getUpdateFromChild($event)"
+  ></app-state-child>
+
+
+
+<!-- <div>
   <h2> Im the PARENT component</h2>
 
   
@@ -24,4 +87,8 @@
     [inProperty]="'foo'"
     (updateEvent)="getUpdateFromChild($event)"
   ></app-state-child>
-<section>
+</section> -->
+
+
+
+</div>

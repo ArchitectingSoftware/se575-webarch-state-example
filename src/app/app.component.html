@@ -1,1 +1,59 @@
-<router-outlet></router-outlet>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" style="color:yellow" routerLink="/">Web Architecture Demo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+<!--     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="/">Home </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/arch">Architecture</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/block/money">Mine-A-Block-Money</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/block/provider">Mine-A-Block-Provider</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/arch/uniK">NEW-Architecture</a>
+        </li>
+      </ul>
+    </div> -->
+
+  </nav>
+  
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Modern Web Architecture Demo!</h1>
+      <p>This is a demonstration application showing the concepts behind the modern web architectures</p>
+      <p>Code by Brian Mitchell.  Follow me on twitter:
+        <a href="https://twitter.com/drbrianmitchell">
+          @DrBrianMitchell
+        </a>
+      </p>
+      <a routerLink="/" class="btn btn-primary">Main Menu</a>
+    </div>
+  </div>
+  
+  <div class="container">
+    <!-- Example row of columns -->
+  
+  
+        <router-outlet></router-outlet>
+  
+  
+  
+    <hr>
+  
+    <footer>
+      <p>&copy; Dr. Brian Mitchell</p>
+    </footer>
+  </div> <!-- /container -->
+  

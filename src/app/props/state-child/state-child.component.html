@@ -1,4 +1,50 @@
 <div>
+    <div class="row">
+        <div class="col-sm-2">
+            <i class="fa fa-arrow-right" style="font-size:100px;"></i>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Child Component &lt;app-state-child&gt;</h3>
+                </div>
+                <div class="card-body">
+                    <h4 class="text-primary">Capturing Property Passed From Parent</h4>
+                    <div class="form-group row">
+                            <label for="dbp" class="col-5" col-form-label>Property:</label>
+                            <div class="col-7">
+                                <label *ngIf="inProperty === undefined; else elseproperty" class="text-danger">
+                                  NO PROPERTY SET
+                                </label>
+                                <ng-template #elseproperty><label class="text-success">
+                                  {{inProperty}}
+                                </label></ng-template>
+                            </div>
+                    </div>
+                    <hr/>
+                    <!-- SENDING EVENT TO CHILD -->
+                    <h4 class="text-primary">Sending an Event to the Parent</h4>
+                    <div class="form-group row">
+                        <label for="dbc" class="col-5" col-form-label>Event Counter:</label>
+                        <div class="col-7">
+                            <input class="form-control form-control-sm" id="dbc" name="first"
+                            [(ngModel)]="stateFullCounter">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="dbe" class="col-5" col-form-label>Send Event Button:</label>
+                        <div class="col-7">
+                            <button class="btn btn-primary btn-sm" (click)="sendEvent()" >Send Update Event -> {{stateFullCounter}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- 
+
+<div>
   <h2>IM THE CHILD COMPONENT</h2>
   <p>passed property: {{inProperty}}</p>
   <hr/>
@@ -9,5 +55,7 @@
         <button (click)="sendEvent()" >Send Update Event -> {{stateFullCounter}}</button>
     </p>
     <hr/>
+</div> -->
+
 </div>
  
