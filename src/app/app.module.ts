@@ -19,6 +19,7 @@ import { postReducer } from './reducers/post.reducer';
 import { HttpComponent } from './observables/http/http.component';
 import { StateUglyComponent } from './props/ugly/state-ugly/state-ugly.component';
 import { StateChildUglyComponent } from './props/ugly/state-child-ugly/state-child-ugly.component';
+import { DemoComponent } from './observables/demo/demo.component';
 
 const appRoutes: Routes = [
   {path: '', component:  MenuComponent},
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {path: 'properties/ugly', component: StateUglyComponent},
   {path: 'properties', component: StateComponent},
   {path: 'services', component: GarageComponent},
+  {path: 'observables', children: [
+    {path: 'http', component: HttpComponent},
+    {path: 'demo', component: DemoComponent}
+  ]},
   {path: 'obs/http', component: HttpComponent},
   { path: '**', redirectTo: '/' }
 ];
@@ -42,7 +47,8 @@ const appRoutes: Routes = [
     GarageComponent,
     HttpComponent,
     StateUglyComponent,
-    StateChildUglyComponent
+    StateChildUglyComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,

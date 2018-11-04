@@ -8,11 +8,16 @@ import { DrivingService } from '../driving.service'
 })
 export class CarComponent implements OnInit {
 
-  driverName: string = 'NOT KNOWN'
-  constructor(private  drivingService: DrivingService) { }
+  driverName: string = "NOT KNOWN";
+
+  constructor(private  drivingService: DrivingService) {
+    
+   }
+
 
   ngOnInit() {
     this.drivingService.currentMessage.subscribe(message => this.driverName = message)
+    this.driverName = "foo"
   }
 
   getDriverName(){
